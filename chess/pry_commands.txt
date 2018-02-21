@@ -1,0 +1,7 @@
+load 'game.rb'
+load 'display.rb'
+load 'pieces.rb'
+load 'board.rb'
+
+b = Board.new
+d = Display.new(b)
