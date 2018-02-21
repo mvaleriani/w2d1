@@ -12,6 +12,7 @@ class Display
   def run
     while true
       render
+      # debugger
       saved_input = self.cursor.get_input
       return saved_input if saved_input.is_a?(Array)
     end

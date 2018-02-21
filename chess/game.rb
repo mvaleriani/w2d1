@@ -11,7 +11,7 @@ class Game
   def initialize
     @gameboard = Board.new
     @display = Display.new(self.gameboard)
-    #run
+    run
   end
 
   def run
@@ -19,10 +19,10 @@ class Game
     move_arr = []
     while true
 
-      move_arr << self.display.run
-
+      move_arr.push(self.display.run.dup)
+      # debugger
       if move_arr.length == 2
-        self.gameboard.move_piece(move_arr[0], move_arr[1])
+        self.gameboard.move_piece(move_arr[0], move_arr[0])
         move_arr = []
       end
 

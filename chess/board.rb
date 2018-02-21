@@ -37,7 +37,7 @@ class Board
     self.board[[7,6]] = Knight.new(:white, self, [7,6])
     self.board[[7,7]] = Rook.new(:white, self, [7,7])
 
-    self.board.each do |piece|
+    self.board.values.each do |piece|
       piece.poss_moves
     end
 
@@ -46,6 +46,7 @@ class Board
   def move_piece(start_pos, end_pos)
 
     piece = self.board[start_pos]
+    # debugger
     if valid_move?(end_pos) && piece.moves.include?(end_pos) && !check_move?(start_pos,end_pos)
       piece.update_pos(end_pos)
     else
